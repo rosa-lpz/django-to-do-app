@@ -95,8 +95,9 @@ const TodoApp = () => {
 
   return (
     
-    <div className="todo-app">
+    <div id="todo-app">
       <h1>To Do List</h1>
+      <h2>Add a new task</h2>
       <div className="todoform">
         <AddTodoForm
           newTodo={newTodo}
@@ -107,8 +108,8 @@ const TodoApp = () => {
           setResolved={setResolved}
           addTodo={addTodo}/>
       </div>
-      <h2>To Do List</h2>
-  
+      
+      <h2>List of tasks</h2>
       <div className="todo-table-container">
         <table className="todo-table">
           <thead>
@@ -136,3 +137,50 @@ const TodoApp = () => {
 }
 
 export default TodoApp
+
+/*
+
+return (
+    
+    <div id="todo-app">
+      <h1>To Do List</h1>
+      <h2>Add a new task</h2>
+      <div className="todoform">
+        <AddTodoForm
+          newTodo={newTodo}
+          setNewTodo={setNewTodo}
+          dueDate={dueDate}
+          setDueDate={setDueDate}
+          resolved={resolved}
+          setResolved={setResolved}
+          addTodo={addTodo}/>
+      </div>
+      
+      <h2>List of tasks</h2>
+      <div className="todo-table-container">
+        <table className="todo-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Due Date</th>
+              <th>Resolved</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {todos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                editTodo={editTodo}
+                deleteTodo={deleteTodo}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+*/

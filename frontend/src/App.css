@@ -133,6 +133,7 @@ h1 {
   margin-bottom: 20px;
 }
 
+/*
 .todoform {
   display: flex;
   flex-wrap: wrap;
@@ -141,7 +142,7 @@ h1 {
   margin-top: 20px;
   justify-content: center;
   padding: 20px;
-}
+}*/
 
 .todo-table-container {
   width: 100%;
@@ -237,4 +238,48 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   background-color: #28a745;
+}
+
+
+/* To Do Form Styles */
+.AddTodoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.AddTodoForm input,
+.AddTodoForm textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.AddTodoForm input:focus,
+.AddTodoForm textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.AddTodoForm button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.AddTodoForm button:hover {
+  background-color: #0056b3;
 }
