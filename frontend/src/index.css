@@ -1,0 +1,235 @@
+/* 
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+Additional styles for the Todo App */
+
+:root
+{   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fondo claro y moderno */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fondo claro y moderno */
+}
+
+.sidebar {
+    width: 220px; /* Sidebar width */
+    background-color: #343a40; /* Dark background */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;  /* Fixed position so it stays in place */
+    left: 0;  /* Stick to the left side */
+    top: 0;  /* Start from the top */
+    height: 100vh; /* Full height of the viewport */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Enable scrolling if needed */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 12px 15px; /* Más espacio vertical */
+    cursor: pointer;
+    border-bottom: 1px solid #495057; /* Línea divisoria sutil */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.sidebar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar li.active {
+    font-weight: bold;
+    color: #00bcd4; /* Color акцентный */
+    background-color: rgba(0, 188, 212, 0.1); /* Fondo акцентный sutil */
+}
+
+.sidebar li:hover {
+    background-color: #495057;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    margin: left 600px; /*Push the content to the right to avoid overlap */   
+}
+
+.main-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+/* Data Preview */
+#data-preview-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left:300px; /*Push the content to the right to avoid overlap */   
+}
+#data-preview-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+}
+
+#data-preview-section th, #data-preview-section td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#data-preview-section th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+#data-preview-section .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#data-preview-section .pagination button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+#data-preview-section .pagination button:hover {
+    background-color: #f0f0f0;
+}
+
+/* D3 Styling (basic) */
+.bar {
+    fill: steelblue;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #333;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 10px;
+}
+
+.dot {
+    fill: steelblue;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+}

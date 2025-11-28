@@ -1,0 +1,240 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fondo claro y moderno */
+}
+
+.sidebar {
+    width: 220px; /* Sidebar width */
+    background-color: #343a40; /* Dark background */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;  /* Fixed position so it stays in place */
+    left: 0;  /* Stick to the left side */
+    top: 0;  /* Start from the top */
+    height: 100vh; /* Full height of the viewport */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Enable scrolling if needed */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 12px 15px; /* Más espacio vertical */
+    cursor: pointer;
+    border-bottom: 1px solid #495057; /* Línea divisoria sutil */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.sidebar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar li.active {
+    font-weight: bold;
+    color: #00bcd4; /* Color акцентный */
+    background-color: rgba(0, 188, 212, 0.1); /* Fondo акцентный sutil */
+}
+
+.sidebar li:hover {
+    background-color: #495057;
+}
+
+.main-content {
+    width: 100%;
+    flex-grow: 1;
+    padding: 30px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: 400px /* Push the content to the right to avoid overlap  */     
+}
+
+.main-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* src/App.css */
+
+/*
+.todo-app {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+.todo-app {
+  width: 100%;
+  min-height: 100vh;
+  flex-grow: 1;
+  padding: 30px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  margin-left: 250px;
+  box-sizing: border-box;
+}*/
+
+.todo-app {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sutil sombra */
+    border-radius: 4px;
+    overflow: hidden; /* Para que el borde redondeado funcione en la tabla */
+    margin-left: 250px;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.todoform {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.todo-table-container {
+  width: 100%;
+  margin-top: 60px;
+  overflow-x: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  padding-top: 200px;
+}
+
+.todo-table th, .todo-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  
+}
+
+.todo-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.todo-item {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.todo-item:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+}
+
+.todo-item.resolved {
+  background-color: #d4edda;
+  text-decoration: line-through;
+}
+
+.todo-item td {
+  vertical-align: middle;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+input[type="text"], input[type="date"] {
+  padding: 8px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+  transform: scale(1.2);
+}
+
+input[type="checkbox"]:checked {
+  background-color: #28a745;
+}
