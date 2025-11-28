@@ -9,21 +9,16 @@ A simple TO-DO application built with Django and React. It provides an easy-to-u
 ![todo-app](img/todo-app.gif)
 
 
-
 ## Features
 
 * Create, edit and delete TODOs
-
 * Assign due dates
-
 * Mark TODOs as resolved
 
   
 
-
 ## Technologies:
 * Django
-
 * React (JavaScript)
 
   
@@ -31,16 +26,15 @@ A simple TO-DO application built with Django and React. It provides an easy-to-u
 ## Future Improvements:
 
 * Implement user authentication
-
 * Implement user profiles with additional customization options.
 
   
 
-## Setup:
+## Setup
 
-Clone this repository
+The first step is cloning this repository and then follow the setup steps of backend (Django) and frontend (React - JavaScript).
 
-### **Django Backend**
+### Django Backend
 
 #### Install the required dependencies
 
@@ -55,7 +49,7 @@ python manage.py migrate
 ```
 
 
-#### Start the Django development server (backend)
+#### Start the Django development server very 
 ```bash
 python manage.py runserver
 ```
@@ -78,3 +72,12 @@ npm run dev
 ```
 
 - The React frontend should be running at `http://localhost:5000`.
+
+
+# Tests
+
+## Backend
+* Test 01: Create a todo task with all fields
+* Test 02: Creating a todo task with only required fields
+
+
